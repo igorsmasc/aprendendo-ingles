@@ -1,3 +1,6 @@
-.exemplo{
-    color: green;
+.navbar{
+    background: #1cb0f6;
 }
+.navbar-inverse {
+    color: #fff;
+    }
