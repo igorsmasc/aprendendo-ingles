@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Frase } from '../shared/frase.model'
 import { FRASES } from './frases-mock'
+import { Coracao } from '../shared/coracao.model';
 
 @Component({
   selector: 'app-painel',
@@ -18,6 +19,8 @@ export class PainelComponent implements OnInit {
   public rodadaFrase: Frase
 
   public progresso: number = 0
+
+  public tentativas: number = 3
 
   constructor() { 
     this.atualizaRodada()
@@ -47,7 +50,13 @@ export class PainelComponent implements OnInit {
        this.atualizaRodada()
 
       } else {
-      alert('A tradução está errada')
+        alert('A tradução está incorreta')
+      //Diminuir a variável tentativas
+      this.tentativas--
+
+      if(this.tentativas === -1){
+        alert('Você perdeu todas as tentativas')
+      }
     }
 
 
