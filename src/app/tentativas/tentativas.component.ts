@@ -18,7 +18,6 @@ export class TentativasComponent implements OnInit, OnChanges {
   ]
   
   constructor() {
-      console.log(this.coracoes)
    }
 
   ngOnChanges(){
